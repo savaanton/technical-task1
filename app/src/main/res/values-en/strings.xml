@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">FirstApp</string>
+    <string name="action_settings">Settings</string>
+    <string name="sport">Sport event</string>
+    <string name="status">Organize</string>
+    <string name="group">Group stage</string>
+    <string name="semiFin">Semifinal</string>
+    <string name="champ">Final</string>
+    <string name="winner">Last year winner </string>
+    <string name="groupDay">March 25,2016</string>
+    <string name="semiFinDay">March 26,2016</string>
+    <string name="champDay">March 27,2016</string>
+    <string name="winnerName">Yalantis</string>
+    <string name="descrip">The football tournament between teams of the companies in the sphere of IT technologies will be held at the football field of SC Voshod at 19:00.</string>
+    <string name="exit">Are you shore you want to quit from App?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+</resources>

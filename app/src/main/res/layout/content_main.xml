@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="ua.antonsava.firstapp.MainActivity"
+    tools:showIn="@layout/main">
+
+    <include layout="@layout/toolbar"/>
+
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/my_toolbar">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin">
+
+            <TextView
+                android:id="@+id/sport"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:clickable="true"
+                android:text="@string/sport"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/sport"
+                android:layout_marginBottom="13dp"
+                android:background="@drawable/status"
+                android:clickable="true"
+                android:text="@string/status"
+                android:textColor="#ffffff"
+                android:textSize="15sp" />
+
+
+            <View
+                style="@style/Line"
+                android:layout_above="@+id/group" />
+
+
+            <TextView
+                android:id="@+id/group"
+                style="@style/LeftBack"
+                android:layout_below="@+id/status"
+                android:text="@string/group" />
+
+            <View
+                style="@style/Line"
+                android:layout_above="@+id/semiFin" />
+
+            <TextView
+                android:id="@+id/semiFin"
+                style="@style/LeftBack"
+                android:layout_below="@+id/group"
+                android:text="@string/semiFin" />
+
+            <View
+                style="@style/Line"
+                android:layout_above="@+id/champ" />
+
+            <TextView
+                android:id="@+id/champ"
+                style="@style/LeftBack"
+                android:layout_below="@+id/semiFin"
+                android:text="@string/champ" />
+
+            <View
+                style="@style/Line"
+                android:layout_above="@+id/winner" />
+
+            <TextView
+                android:id="@+id/winner"
+                style="@style/LeftBack"
+                android:layout_below="@+id/champ"
+                android:text="@string/winner" />
+
+            <TextView
+                android:id="@+id/groupDay"
+                style="@style/RightBack"
+                android:layout_alignBaseline="@+id/group"
+                android:text="@string/groupDay" />
+
+            <TextView
+                android:id="@+id/semiFinDay"
+                style="@style/RightBack"
+                android:layout_alignBaseline="@+id/semiFin"
+                android:text="@string/semiFinDay" />
+
+            <TextView
+                android:id="@+id/champDay"
+                style="@style/RightBack"
+                android:layout_alignBaseline="@+id/champ"
+                android:text="@string/champDay" />
+
+            <TextView
+                android:id="@+id/winnerName"
+                style="@style/RightBack"
+                android:layout_alignBaseline="@+id/winner"
+                android:text="@string/winnerName" />
+
+            <View
+                style="@style/Line"
+                android:layout_above="@+id/descrip" />
+
+            <TextView
+                android:id="@+id/descrip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/winner"
+                android:layout_marginTop="20dp"
+                android:clickable="true"
+                android:text="@string/descrip"
+                android:textColor="#000000"
+                android:textSize="15sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/descrip"
+                >
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycler_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>
