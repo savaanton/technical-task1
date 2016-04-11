@@ -15,8 +15,8 @@ import java.util.List;
  * Created by Apple on 01.04.2016.
  */
 public class PicAdapter extends RecyclerView.Adapter<PicAdapter.ViewHolder>{
-private List<MyData> imageList;
-private Context mContext;
+private List<MyData> imageList; //[Comment] Whats wrong with formatting?? Wrong name
+private Context mContext; //[Comment] Use Alt + shift + L
 
 public PicAdapter(Context context,List<MyData>imageList){
         this.imageList=imageList;
@@ -37,20 +37,20 @@ public static class ViewHolder extends RecyclerView.ViewHolder {
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.recycler_image, parent, false);
-        ViewHolder myViewHolder = new ViewHolder(view);
+        ViewHolder myViewHolder = new ViewHolder(view); //[Comment] Your viewholder? Use correct names
         return myViewHolder;
     }
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        //holder.imageView.setImageResource(imageList.get(position).myPic);
+        //holder.imageView.setImageResource(imageList.get(position).myPic); //[Comment] Commented code
 
         ImageView picList = holder.imageView;
         int src = imageList.get(position).getMyPic();
-        //File imageFile = new File("assets/images/"+src+".jpg");
+        //File imageFile = new File("assets/images/"+src+".jpg"); //[Comment] Commented code
         Picasso.with(mContext)
-                .load(src).resize(340, 400).into(picList);
-        //Glide.with(mContext).load(imageFile).into(picList);
+                .load(src).resize(340, 400).into(picList); //[Comment] Magic numbers
+        //Glide.with(mContext).load(imageFile).into(picList); //[Comment] Commented code
     }
 
     @Override

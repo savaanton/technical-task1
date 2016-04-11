@@ -1,7 +1,7 @@
 package ua.antonsava.firstapp;
 
 import android.app.AlertDialog;
-import android.content.DialogInterface;
+import android.content.DialogInterface; //[Comment] Unused import
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -19,12 +19,12 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-
+//[Comment] Wrong toolbar and status bar colors
 public class MainActivity extends AppCompatActivity {
 
     private Toolbar toolbar;
-    TextView textView1;
-    TextView textView2;
+    TextView textView1; //[Comment] Use google code style. Anyway, NEVER use such names
+    TextView textView2; //[Comment] Wrong visibility modifiers
     TextView textView3;
     TextView textView4;
     TextView textView5;
@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 switch (v.getId()) {
                     case R.id.sport:
-                        Toast toast1 = Toast.makeText(MainActivity.this, "TextView sport", Toast.LENGTH_LONG);
+                        Toast toast1 = Toast.makeText(MainActivity.this, "TextView sport", Toast.LENGTH_LONG); //[Comment] Wrong information. Show control name. Use view.getClass().getSimpleName()
                         toast1.show();
                         break;
                     case R.id.status:
@@ -142,12 +142,12 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         finish();
-    }
+    } //[Comment] Unnecessary. You don't need it
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_main, menu); //[Comment] You don't have menu
         return true;
     }
 
@@ -162,6 +162,6 @@ public class MainActivity extends AppCompatActivity {
         if (id == R.id.action_settings) {
             return true;
         }
-        return super.onOptionsItemSelected(item);
+        return super.onOptionsItemSelected(item); //[Comment] Unnecessary method
     }
 }
