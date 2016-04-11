@@ -1,11 +1,6 @@
 package ua.antonsava.firstapp;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -22,7 +17,6 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Toolbar toolbar;
     TextView textView1;
     TextView textView2;
     TextView textView3;
@@ -34,9 +28,10 @@ public class MainActivity extends AppCompatActivity {
     TextView textView9;
     TextView textView10;
     TextView textView11;
-    private List<MyData> imageList = new ArrayList<>();
+    private Toolbar toolbar;
+    private List<PictureData> imageList = new ArrayList<>();
     private RecyclerView mRecyclerView;
-    private PicAdapter mAdapter;
+    private PictureAdapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
 
     @Override
@@ -54,20 +49,20 @@ public class MainActivity extends AppCompatActivity {
         mRecyclerView.setLayoutManager(mLayoutManager);
 
         reciveDataImage();
-        mAdapter = new PicAdapter(MainActivity.this, imageList);
+        mAdapter = new PictureAdapter(MainActivity.this, imageList);
         mRecyclerView.setAdapter(mAdapter);
 
         textView1 = (TextView) findViewById(R.id.sport);
         textView2 = (TextView) findViewById(R.id.status);
         textView3 = (TextView) findViewById(R.id.group);
-        textView4 = (TextView) findViewById(R.id.semiFin);
+        textView4 = (TextView) findViewById(R.id.semiFinal);
         textView5 = (TextView) findViewById(R.id.champ);
         textView6 = (TextView) findViewById(R.id.winner);
         textView7 = (TextView) findViewById(R.id.groupDay);
-        textView8 = (TextView) findViewById(R.id.semiFinDay);
+        textView8 = (TextView) findViewById(R.id.semiFinalDay);
         textView9 = (TextView) findViewById(R.id.champDay);
         textView10 = (TextView) findViewById(R.id.winnerName);
-        textView11 = (TextView) findViewById(R.id.descrip);
+        textView11 = (TextView) findViewById(R.id.description);
 
         View.OnClickListener onClickListener = new View.OnClickListener() {
             @Override
@@ -85,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
                         Toast toast3 = Toast.makeText(MainActivity.this, "TextView group", Toast.LENGTH_LONG);
                         toast3.show();
                         break;
-                    case R.id.semiFin:
+                    case R.id.semiFinal:
                         Toast toast4 = Toast.makeText(MainActivity.this, "TextView semiFin", Toast.LENGTH_LONG);
                         toast4.show();
                         break;
@@ -97,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
                         Toast toast6 = Toast.makeText(MainActivity.this, "TextView groupDay", Toast.LENGTH_LONG);
                         toast6.show();
                         break;
-                    case R.id.semiFinDay:
+                    case R.id.semiFinalDay:
                         Toast toast7 = Toast.makeText(MainActivity.this, "TextView semiFinDay", Toast.LENGTH_LONG);
                         toast7.show();
                         break;
@@ -113,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
                         Toast toast10 = Toast.makeText(MainActivity.this, "TextView winner", Toast.LENGTH_LONG);
                         toast10.show();
                         break;
-                    case R.id.descrip:
+                    case R.id.description:
                         Toast toast11 = Toast.makeText(MainActivity.this, "TextView description", Toast.LENGTH_LONG);
                         toast11.show();
                         break;
@@ -121,22 +116,22 @@ public class MainActivity extends AppCompatActivity {
             }
         };
 
-    textView1.setOnClickListener(onClickListener);
-    textView2.setOnClickListener(onClickListener);
-    textView3.setOnClickListener(onClickListener);
-    textView4.setOnClickListener(onClickListener);
-    textView5.setOnClickListener(onClickListener);
-    textView6.setOnClickListener(onClickListener);
-    textView7.setOnClickListener(onClickListener);
-    textView8.setOnClickListener(onClickListener);
-    textView9.setOnClickListener(onClickListener);
-    textView10.setOnClickListener(onClickListener);
-    textView11.setOnClickListener(onClickListener);
-}
+        textView1.setOnClickListener(onClickListener);
+        textView2.setOnClickListener(onClickListener);
+        textView3.setOnClickListener(onClickListener);
+        textView4.setOnClickListener(onClickListener);
+        textView5.setOnClickListener(onClickListener);
+        textView6.setOnClickListener(onClickListener);
+        textView7.setOnClickListener(onClickListener);
+        textView8.setOnClickListener(onClickListener);
+        textView9.setOnClickListener(onClickListener);
+        textView10.setOnClickListener(onClickListener);
+        textView11.setOnClickListener(onClickListener);
+    }
 
     private void reciveDataImage() {
-        imageList.add(new MyData(R.drawable.yalantis));
-        imageList.add(new MyData(R.drawable.mont));
+        imageList.add(new PictureData(R.drawable.yalantis));
+        imageList.add(new PictureData(R.drawable.mont));
     }
 
     @Override

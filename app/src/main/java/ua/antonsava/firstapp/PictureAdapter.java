@@ -14,17 +14,17 @@ import java.util.List;
 /**
  * Created by Apple on 01.04.2016.
  */
-public class PicAdapter extends RecyclerView.Adapter<PicAdapter.ViewHolder>{
-private List<MyData> imageList;
+public class PictureAdapter extends RecyclerView.Adapter<PictureAdapter.ViewHolder>{
+private List<PictureData> imageList;
 private Context mContext;
 
-public PicAdapter(Context context,List<MyData>imageList){
+public PictureAdapter(Context context, List<PictureData> imageList){
         this.imageList=imageList;
         mContext=context;
         }
 
 public static class ViewHolder extends RecyclerView.ViewHolder {
-    ImageView imageView;
+   public ImageView imageView;
 
     public ViewHolder(View itemView) {
         super(itemView);
@@ -45,11 +45,11 @@ public static class ViewHolder extends RecyclerView.ViewHolder {
     public void onBindViewHolder(ViewHolder holder, int position) {
         //holder.imageView.setImageResource(imageList.get(position).myPic);
 
-        ImageView picList = holder.imageView;
-        int src = imageList.get(position).getMyPic();
+        ImageView pictureList = holder.imageView;
+        int src = imageList.get(position).getPicture();
         //File imageFile = new File("assets/images/"+src+".jpg");
         Picasso.with(mContext)
-                .load(src).resize(340, 400).into(picList);
+                .load(src).resize(340, 400).into(pictureList);
         //Glide.with(mContext).load(imageFile).into(picList);
     }
 

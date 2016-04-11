@@ -61,13 +61,13 @@
 
             <View
                 style="@style/Line"
-                android:layout_above="@+id/semiFin" />
+                android:layout_above="@+id/semiFinal" />
 
             <TextView
-                android:id="@+id/semiFin"
+                android:id="@+id/semiFinal"
                 style="@style/LeftBack"
                 android:layout_below="@+id/group"
-                android:text="@string/semiFin" />
+                android:text="@string/semiFinal" />
 
             <View
                 style="@style/Line"
@@ -76,7 +76,7 @@
             <TextView
                 android:id="@+id/champ"
                 style="@style/LeftBack"
-                android:layout_below="@+id/semiFin"
+                android:layout_below="@+id/semiFinal"
                 android:text="@string/champ" />
 
             <View
@@ -96,10 +96,10 @@
                 android:text="@string/groupDay" />
 
             <TextView
-                android:id="@+id/semiFinDay"
+                android:id="@+id/semiFinalDay"
                 style="@style/RightBack"
-                android:layout_alignBaseline="@+id/semiFin"
-                android:text="@string/semiFinDay" />
+                android:layout_alignBaseline="@+id/semiFinal"
+                android:text="@string/semiFinalDay" />
 
             <TextView
                 android:id="@+id/champDay"
@@ -115,23 +115,23 @@
 
             <View
                 style="@style/Line"
-                android:layout_above="@+id/descrip" />
+                android:layout_above="@+id/description" />
 
             <TextView
-                android:id="@+id/descrip"
+                android:id="@+id/description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/winner"
                 android:layout_marginTop="20dp"
                 android:clickable="true"
-                android:text="@string/descrip"
+                android:text="@string/description"
                 android:textColor="#000000"
                 android:textSize="15sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_below="@+id/descrip"
+                android:layout_below="@+id/description"
                 >
 
                 <android.support.v7.widget.RecyclerView
