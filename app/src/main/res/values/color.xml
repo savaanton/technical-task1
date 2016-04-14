@@ -10,4 +10,6 @@
     <color name="divider">#e6e6fa</color>
     <color name="line">#b6b6b6</color>
     <color name="status_background">#ff8c00</color>
+    <color name="left_back_color_text">#696969</color>
+    <color name="right_back_color_text">#000000</color>
 </resources>

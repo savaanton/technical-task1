@@ -14,7 +14,7 @@
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/my_toolbar">
+        android:layout_below="@+id/app_toolbar">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -40,7 +40,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/sport"
                 android:layout_marginBottom="13dp"
-                android:background="@drawable/status_background"
+                android:background="@drawable/status_text_background"
                 android:clickable="true"
                 android:text="@string/status"
                 android:textColor="#ffffff"
