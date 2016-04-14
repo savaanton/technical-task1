@@ -14,47 +14,40 @@ import java.util.List;
 /**
  * Created by Apple on 01.04.2016.
  */
-public class PictureAdapter extends RecyclerView.Adapter<PictureAdapter.ViewHolder>{
-private List<PictureData> imageList;
-private Context mContext;
+public class PictureAdapter extends RecyclerView.Adapter<PictureAdapter.ViewHolder> {
+    private List<Integer> mPictureList;
+    private Context mContext;
 
-public PictureAdapter(Context context, List<PictureData> imageList){
-        this.imageList=imageList;
-        mContext=context;
-        }
-
-public static class ViewHolder extends RecyclerView.ViewHolder {
-   public ImageView imageView;
-
-    public ViewHolder(View itemView) {
-        super(itemView);
-        this.imageView = (ImageView) itemView.findViewById(R.id.image);
+    public PictureAdapter(Context context, List<Integer> imageList) {
+        this.mPictureList = imageList;
+        mContext = context;
     }
 
-}
+    public static class ViewHolder extends RecyclerView.ViewHolder {
+        ImageView imageView;
+
+        public ViewHolder(View itemView) {
+            super(itemView);
+            this.imageView = (ImageView) itemView.findViewById(R.id.image);
+        }
+    }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.recycler_image, parent, false);
-        ViewHolder myViewHolder = new ViewHolder(view);
-        return myViewHolder;
+        return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        //holder.imageView.setImageResource(imageList.get(position).myPic);
-
         ImageView pictureList = holder.imageView;
-        int src = imageList.get(position).getPicture();
-        //File imageFile = new File("assets/images/"+src+".jpg");
-        Picasso.with(mContext)
-                .load(src).resize(340, 400).into(pictureList);
-        //Glide.with(mContext).load(imageFile).into(picList);
+        int src = mPictureList.get(position);
+        Picasso.with(mContext).load(src).into(pictureList);
     }
 
     @Override
     public int getItemCount() {
-        return imageList.size();
+        return mPictureList.size();
     }
 }
